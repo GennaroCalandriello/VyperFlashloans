@@ -117,14 +117,12 @@ def pool_creation():
         time.sleep(4)
 
 
-def get_query(file_path, variables):
+def get_query(URL, file_path, variables):
     query = load_query(file_path)
     var = list(query["variables"].keys())[0]
     query = query["query"]
-    variables = {f"{var}": f"{variables}"}
-    response = requests.post(
-        UNISWAP_V3_SUBGRAPH_URL, json={"query": query, "variables": variables}
-    )
+    variables = {f"{var}": variables}
+    response = requests.post(URL, json={"query": query, "variables": variables})
 
     return response
 
@@ -132,7 +130,9 @@ def get_query(file_path, variables):
 def main():
     WETH_ADDR = "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
 
-    response = get_query("UniswapQueries/tokenpools.json", WETH_ADDR)
+    response = get_query(
+        UNISWAP_V3_SUBGRAPH_URL, "UniswapQueries/tokenpools.json", WETH_ADDR
+    )
     data = json.loads(response.text)
 
     if response.status_code == 200:

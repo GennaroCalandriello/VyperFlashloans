@@ -1,0 +1,6 @@
+{
+    "query": "query Snapshot($tokenId: ID!){ tokenSnapshots(where: {token: $tokenId}) { id token price timestamp } }",
+    "variables": {
+        "tokenId": "0x1"
+    }
+}

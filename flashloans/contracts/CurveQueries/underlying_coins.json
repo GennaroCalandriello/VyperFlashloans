@@ -1,0 +1,6 @@
+{
+    "query": "query GetUnderlyingCoins($first:Int!) {underlyingCoins(first:$first) {id, index, pool {id}, token {id, symbol, name}, balance, updated, updatedAtBlock, updatedAtTransaction}}",
+    "variables": {
+        "first": 10
+    }
+}

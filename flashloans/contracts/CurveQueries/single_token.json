@@ -1,0 +1,6 @@
+{
+    "query": "query SingleToken($tokenId: ID!) {tokens(id: $tokenId){symbol, coins}}",
+    "variables": {
+        "tokenId": "0x0000000000000000000000000000000000000000"
+    }
+}
