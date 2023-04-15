@@ -1,0 +1,6 @@
+{
+    "query": "query GetPools($tokenAddress: ID!) { pools(first: 10, where: { token0: $tokenAddress })  { id, token0 { name, symbol, id }, token1 { name, symbol, id } } }",
+    "variables": {
+        "tokenAddress": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+    }
+}

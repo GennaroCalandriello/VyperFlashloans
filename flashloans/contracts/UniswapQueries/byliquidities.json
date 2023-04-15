@@ -1,0 +1,3 @@
+{
+    "query": "{ pools(first: 10, orderBy: liquidity, orderDirection: desc) { id, token0 { name, symbol, id }, token1 { name, symbol, id }, feeTier, liquidity } }"
+}

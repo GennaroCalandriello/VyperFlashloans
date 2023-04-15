@@ -1,0 +1,3 @@
+{
+    "query": "query GetPoolInfo($poolID: ID!) { pool(id: $poolID) { tick, token0 { symbol, id, decimals }, token1 { symbol, id, decimals }, feeTier, sqrtPrice, liquidity, volumeToken0, volumeToken1, totalValueLockedToken0, totalValueLockedToken1 } }"
+}
